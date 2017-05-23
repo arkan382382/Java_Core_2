@@ -1,3 +1,8 @@
+import org.omg.CORBA.IntHolder;
+
+import java.awt.*;
+import java.util.ArrayList;
+
 /**
  * Created by arkan on 19.05.2017.
  */
@@ -20,7 +25,33 @@ public class TestJavaCore2 {
        /* The same effect like above but with getClass function: */
        System.out.println("m1 == e1: " + (m_first.getClass() == e_first.getClass())); // different class
        System.out.println("e1 == e2: " + (e_first.getClass() == e_second.getClass())); // the same class
-       System.out.println();
+
+       ArrayList<Employee> staff = new ArrayList<>();
+       staff.add(e_first);
+       staff.add(new Employee("Albert", 2500, 22, 6));
+       System.out.println(staff.size());
+       System.out.println(staff.get(0).getName() +" "+ staff.get(1).getName());
+       staff.add(1, m_first);
+       System.out.println(staff.get(0).getName() +" "+ staff.get(1).getName() +" "+ staff.get(2).getName());
+
+       /* Autoboxing (opakowanie) i odpakowanie */
+       ArrayList<Integer> list = new ArrayList<>();
+       list.add(3);                             // the same autoboxing
+       list.add(new Integer(4));          // the same autoboxing
+
+       int n = list.get(0);                     // the same odpakowanie
+       int m = list.get(0).intValue();          // the same odpakowanie
+       Toolkit.getDefaultToolkit().beep();
+
+       Employee original = new Employee("A", 1, 1, 1);
+       Employee copy = original;
+       copy.setName("B");
+       System.out.println(original.getName() + " " + copy.getName());   // original and copy is the same, change on copy is affects original
+
+       Employee original2 = new Employee("AA", 11, 11, 11);
+       // Employee copy2 = original2.clone();                           // original i copy to dwa osobne obiekty (lecz nie działa)
+
+
    }
 }
 

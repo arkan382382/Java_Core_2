@@ -51,7 +51,10 @@ public class TestJavaCore2 {
 
        Employee original2 = new Employee("AA", 11, 11, 11);
        // Employee copy2 = original2.clone();                           // original i copy to dwa osobne obiekty (lecz nie działa)
-
+        /* close is working when main class implements Cloneable interface but it can cause a lot of problems
+        * See more in books
+        * */
+       
        String a = "10";                     // the same place in memory
        String b = "10";                     // also
        String c = new String("10"); // diferent place in memory

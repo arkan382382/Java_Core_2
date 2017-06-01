@@ -16,6 +16,7 @@ public class TestJavaCore2 {
        DiferentEmployee d_first = new DiferentEmployee("Adam", 26);
        System.out.println("e_1: " + e_first.getClass() + ", m_1: " + m_first.getClass() + ", d_1: " + d_first.getClass());
        System.out.println("e1.equals(m1): " + e_first.equals(m_first));     // false
+       System.out.println(e_first == m_first);
        System.out.println("m1.equals(e1): " + m_first.equals(e_first));     // false
        System.out.println("e1.equals(e2): " + e_first.equals(e_second));    // false
        System.out.println("e1.name.equals(m1.name): " + e_first.getName().equals(d_first.getPseudo())); // true - the same value
@@ -51,7 +52,10 @@ public class TestJavaCore2 {
        Employee original2 = new Employee("AA", 11, 11, 11);
        // Employee copy2 = original2.clone();                           // original i copy to dwa osobne obiekty (lecz nie działa)
 
-
+       String a = "10";                     // the same place in memory
+       String b = "10";                     // also
+       String c = new String("10"); // diferent place in memory
+       System.out.println("a: " + System.identityHashCode(a) + " B: " + System.identityHashCode(b) + " C: " + System.identityHashCode(c));
    }
 }
 

@@ -50,6 +50,7 @@ public class TestJavaCore2 {
        System.out.println(original.getName() + " " + copy.getName());   // original and copy is the same, change on copy is affects original
 
        Employee original2 = new Employee("AA", 11, 11, 11);
+       //Employee copy = new Employee();  operator (new) creating new obiect in diferent place in memory
        // Employee copy2 = original2.clone();                           // original i copy to dwa osobne obiekty (lecz nie działa)
         /* close is working when main class implements Cloneable interface but it can cause a lot of problems
         * See more in books
